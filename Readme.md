@@ -8,6 +8,7 @@ Assumptions:
 - Python 3.6 is installed. This example uses a typical python3.6 install on MacOS.
 - You are starting in a terminal window in the directory that you want to add Flask
 - You have administrative rights to create directories and install python packages
+- virtualenv is installed. If not use 'pip install virtualenv'
 
 The first command will create a directory with the base Flask framework files:
 ```
@@ -21,14 +22,20 @@ cd FlaskBareDash
 
 Next we will create a virtual environment that will contain all the requirements for running Flask and then activate that environment.
 ```
-virtualenv -p /usr/local/bin/python3.6 vFlaskBareDash
-source /vFlaskBareDash/bin/activate
+For Windows:
+python3 -m venv vFlaskBareDash
+vFlaskBareDash\Scripts\activate.bat
+
+For all other systems:
+python3 -m venv vFlaskBareDash
+source vFlaskBareDash/bin/activate (for all other systems)
 ```
 
 In this virtual environment there are no python packages installed by default. The requirements.txt file contains all the needed packages. They can all be installed with one line.
 ```
 pip install -r requirements.txt
 ```
+NOTE: ensure that all packages install successfully and manually install any that fail.
 
 If you're interested in publishing your own version of this dashboard once you've customized it for your needs the following commands will set up the git version control required for backing it up and making it accessible to others.
 
@@ -39,9 +46,12 @@ git add .
 git commit -m "First commit"
 ```
 
-In order to publish the code you will need to log into https://github.com with your own username and create a new repository there. Take note of the url for this new repository. The following commands will set you up to publish your updated files every time you commit changes in version control locally.
+In order to publish the code you will need to log into https://github.com with your own username and create a new repository there. Take note of the url for this new repository ( << repo url >> ). The following commands will set you up to publish your updated files every time you commit changes in version control locally.
 ```
-git remote add origin << url of your repo on github >>
+git remote add origin << repo url >>
+    or
+git remote set-url origin << repo url >>
+
 git push -u origin master
 ```
 
@@ -54,6 +64,11 @@ git push -u origin master
 
 Now you are ready to run the flask "web server". The following command prompt will initiate the web service:
 ```
+For Windows:
+>set FLASK_APP=hello
+>flask run
+
+For all other systems:
 FLASK_APP=hello.py flask run
 ```
 
