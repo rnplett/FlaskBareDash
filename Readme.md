@@ -23,12 +23,12 @@ cd FlaskBareDash
 Next we will create a virtual environment that will contain all the requirements for running Flask and then activate that environment.
 ```
 For Windows:
-python3 -m venv vFlaskBareDash
-vFlaskBareDash\Scripts\activate.bat
+python3 -m venv venv
+venv\Scripts\activate.bat
 
 For all other systems:
-python3 -m venv vFlaskBareDash
-source vFlaskBareDash/bin/activate (for all other systems)
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 In this virtual environment there are no python packages installed by default. The requirements.txt file contains all the needed packages. They can all be installed with one line.
@@ -78,3 +78,8 @@ http://127.0.0.1:5000/hello
 ```
 
 When you're done testing the ctrl-C key combination will escape you out of the process so you have your terminal prompt back.
+
+When you're done with the virtual environment you will need to deactivate it so you can return to the native terminal prompt.
+```
+deactivate
+```
