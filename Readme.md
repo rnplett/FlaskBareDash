@@ -69,7 +69,7 @@ For Windows:
 >flask run
 
 For all other systems:
-FLASK_APP=hello.py flask run
+FLASK_APP=hello.py flask run --host=x.x.x.x
 ```
 
 After you issue the command above, the system will respond with a url that you can put in your favorite web browser to test your flask pages.  Here's an example of what that url may look like:
