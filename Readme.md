@@ -71,6 +71,7 @@ For Windows:
 For all other systems:
 FLASK_APP=hello.py flask run --host=x.x.x.x
 ```
+NOTE (Jan 2020): I have changed my best practice on this to run the flask app as part of the main py script so all I have to do is run the app script and it automatically starts the flask environment. See the flask implementation as part of the masterpi repo as an example.
 
 After you issue the command above, the system will respond with a url that you can put in your favorite web browser to test your flask pages.  Here's an example of what that url may look like:
 ```
